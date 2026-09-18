@@ -1,0 +1,64 @@
+# ── Secrets — NEVER commit (moved separately via encrypted bundle) ───────────
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/env-config/*secret*.env
+!**/env-config/*secret*.env.example
+*.pem
+*.key
+!**/storage/oauth-*.key.example
+
+# ── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+vendor/
+.pnp
+.pnp.js
+
+# ── Build output ────────────────────────────────────────────────────────────
+dist/
+build/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# ── Test artifacts (regenerable, huge) ──────────────────────────────────────
+playwright-report/
+test-results/
+screenshots/
+snapshots/
+blob-report/
+playwright/.cache/
+.phpunit.result.cache
+coverage/
+
+# ── Laravel runtime ─────────────────────────────────────────────────────────
+storage/*.key
+storage/logs/*.log
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+bootstrap/cache/*.php
+public/storage
+public/build
+public/hot
+
+# ── Archives / DB dumps / local junk ────────────────────────────────────────
+*.zip
+*.tar.gz
+*.sql
+*.log
+temp_verify/
+_RESTORE_*/
+scratchpad/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Machine-local Claude permissions ────────────────────────────────────────
+.claude/settings.local.json

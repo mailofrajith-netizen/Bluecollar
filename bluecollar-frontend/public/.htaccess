@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+
+# Rewrite /storage/* → /api/storage/* so product images resolve correctly
+# (API files live in public_html/api/, images in public_html/api/storage/)
+RewriteCond %{REQUEST_URI} ^/storage/
+RewriteRule ^storage/(.*)$ api/storage/$1 [L]
+
+# SPA fallback — send all non-file, non-directory requests to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
